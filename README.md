@@ -1,5 +1,3 @@
-#  React-Redux-Group-Project Module 3
-#  Space Traveler's Hub
 <a name="readme-top"></a>
  # 📗 Table of Contents
 - [React-Redux-Group-Project)
@@ -171,15 +169,14 @@ If you like this project, give us a ⭐️ star!
 
 -	Thanks to the Microverse team for the great curriculum.
 -	Thanks to the Code Reviewer(s) for the insightly feedbacks.
--   I appreciate my project team members
--	A great thanks to my coding partner(s), morning session team, 
-    and standup team for their contributions.
+-  We appreciate our project team members
+-	A great thanks to my coding partner(s), morning session team,and standup team for their contributions.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
  
 ## 📝 License <a name="license"></a> 
 
-This project is [MIT](./MIT.md) licensed.
+This project is [MIT](License) licensed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
  
