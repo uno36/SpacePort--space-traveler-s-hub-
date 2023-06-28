@@ -42,3 +42,45 @@ header nav a {
 .logo {
   width: 100px;
 }
+
+/*Rocket cards css*/
+.rocket-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.card {
+  display: block;
+  width: 100%;
+}
+
+.card-body {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.card-image {
+  width: 300px;
+  flex-shrink: 0;
+}
+
+.card-content {
+  flex-grow: 1;
+}
+
+.card-button {
+  margin-top: 10px;
+}
+
+/* Missions Table */
+
+.status-column {
+  width: 150px; 
+}
+
+.action-column {
+  width: 150px; 
+}
+
