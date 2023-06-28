@@ -19,7 +19,8 @@
       "react/react-in-jsx-scope": "off",
       "import/no-unresolved": "off",
       "no-shadow": "off",
-      "no-unused-vars": "off"
+      "no-unused-vars": "off",
+      "import/no-named-deafault": "off"
     },
     "overrides": [
       {
