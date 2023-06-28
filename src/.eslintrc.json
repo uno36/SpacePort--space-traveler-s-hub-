@@ -19,7 +19,10 @@
       "react/react-in-jsx-scope": "off",
       "import/no-unresolved": "off",
       "no-shadow": "off",
-      "no-unused-vars": "off"
+      "no-unused-vars": "off",
+      "react/no-unescaped-entities": "off",
+      "import/no-named-default": "off",
+      "no-case-declarations": "off"
     },
     "overrides": [
       {
