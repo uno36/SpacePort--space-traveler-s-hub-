@@ -1,4 +1,3 @@
-import { createAction } from '@reduxjs/toolkit';
 import axios from 'axios';
 import { default as JOIN_MISSION } from './missionsTypes';
 
@@ -44,37 +43,3 @@ export const fetchMissions = () => (dispatch) => {
       dispatch(fetchMissionsFailure(error.message));
     });
 };
-
-
-const initialState = {
-  missions: [],
-  selectedMission: null,
-  loading: false,
-  error: null,
-};
-
-const missionsActions = createAction({
-  name: 'missions',
-  initialState,
-  reducers: {
-    joinMission: (state, action) => {
-      state.missions = state.missions.map((mission) => {
-        if (mission.mission_id !== action.payload) return mission;
-        return { ...mission, reserved: true };
-      });
-    },
-    leaveMission: (state, action) => {
-      state.missions = state.missions.map((mission) => {
-        return { ...mission, reserved: false };
-      });
-    },
-  },
-  extraReducers: (builders) => {
-    builders.addCase(fetchMissions.fulfilled, (state, action) => {
-      state.missions = action.payload;
-    });
-  },
-});
-
-export const { leaveMission } = missionsActions.actions;
-export default missionsActions.reducer;

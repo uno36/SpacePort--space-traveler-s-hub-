@@ -84,3 +84,24 @@ header nav a {
   width: 150px; 
 }
 
+/* Links */
+
+.link-item1:hover,
+.link-item2:hover,
+.link-item3:hover {
+  color: red;
+}
+
+.link-item1.active,
+.link-item2.active,
+.link-item3.active {  
+  text-decoration: underline;
+  
+}
+
+.separator {
+  margin: 0 10px;
+  color: #777;
+}
+
+
