@@ -7,7 +7,7 @@ export default function Header() {
       <header className="header">
         <div className="logo-div">
           <img src={logo} alt="logo" className="logo" />
-          <h1>Space Travelers&#39 Hub</h1>
+          <h1>Space Travelers' Hub</h1>
         </div>
         <div>
           <nav>
