@@ -43,7 +43,7 @@ header nav a {
   width: 100px;
 }
 
-/*Rocket cards css*/
+/* Rocket cards css */
 .rocket-cards {
   display: flex;
   flex-wrap: wrap;
@@ -77,11 +77,11 @@ header nav a {
 /* Missions Table */
 
 .status-column {
-  width: 150px; 
+  width: 150px;
 }
 
 .action-column {
-  width: 150px; 
+  width: 150px;
 }
 
 /* Links */
@@ -94,14 +94,11 @@ header nav a {
 
 .link-item1.active,
 .link-item2.active,
-.link-item3.active {  
+.link-item3.active {
   text-decoration: underline;
-  
 }
 
 .separator {
   margin: 0 10px;
   color: #777;
 }
-
-

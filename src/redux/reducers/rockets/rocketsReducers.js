@@ -2,7 +2,6 @@ import {
   FETCH_ROCKETS_REQUEST,
   FETCH_ROCKETS_SUCCESS,
   FETCH_ROCKETS_FAILURE,
-  SELECT_ROCKET,
 } from './rocketsActions';
 import { default as RESERVE_ROCKET } from './rocketsTypes';
 
@@ -23,7 +22,8 @@ const rocketsReducer = (state = initialState, action) => {
     case RESERVE_ROCKET:
       return {
         ...state,
-        rockets: state.rockets.map((rocket) => (rocket.id === action.payload ? { ...rocket, reserved: true } : rocket)),
+        rockets: state.rockets.map((rocket) => (rocket.id === action.payload
+          ? { ...rocket, reserved: true } : rocket)),
       };
     case FETCH_ROCKETS_SUCCESS:
       return {
@@ -41,7 +41,8 @@ const rocketsReducer = (state = initialState, action) => {
       const { rocketId } = action.payload;
       return {
         ...state,
-        rockets: state.rockets.map((rocket) => (rocket.id === rocketId ? { ...rocket, reserved: true } : rocket)),
+        rockets: state.rockets.map((rocket) => (rocket.id === rocketId
+          ? { ...rocket, reserved: true } : rocket)),
       };
     default:
       return state;

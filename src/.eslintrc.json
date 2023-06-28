@@ -20,7 +20,9 @@
       "import/no-unresolved": "off",
       "no-shadow": "off",
       "no-unused-vars": "off",
-      "import/no-named-deafault": "off"
+      "import/no-named-default": "off",
+      "no-case-declarations": "off",
+      "react/no-unescaped-entities": "off"
     },
     "overrides": [
       {
