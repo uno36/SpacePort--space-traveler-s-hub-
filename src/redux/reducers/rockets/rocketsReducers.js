@@ -23,7 +23,8 @@ const rocketsReducer = (state = initialState, action) => {
     case RESERVE_ROCKET:
       return {
         ...state,
-        rockets: state.rockets.map((rocket) => (rocket.id === action.payload ? { ...rocket, reserved: true } : rocket)),
+        rockets: state.rockets.map((rocket) => (
+          rocket.id === action.payload ? { ...rocket, reserved: true } : rocket)),
       };
     case FETCH_ROCKETS_SUCCESS:
       return {
@@ -41,7 +42,8 @@ const rocketsReducer = (state = initialState, action) => {
       const { rocketId } = action.payload;
       return {
         ...state,
-        rockets: state.rockets.map((rocket) => (rocket.id === rocketId ? { ...rocket, reserved: true } : rocket)),
+        rockets: state.rockets.map((rocket) => (
+          rocket.id === rocketId ? { ...rocket, reserved: true } : rocket)),
       };
     default:
       return state;

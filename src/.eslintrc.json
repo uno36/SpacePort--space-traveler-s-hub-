@@ -20,7 +20,8 @@
       "import/no-unresolved": "off",
       "no-shadow": "off",
       "no-unused-vars": "off",
-      "import/no-named-deafault": "off"
+      "no-case-declarations": "off",
+      "import/no-named-default": "off"
     },
     "overrides": [
       {
