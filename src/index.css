@@ -13,6 +13,9 @@ h1 {
 }
 
 header {
+  position: fixed;
+  width: 100%;
+  z-index: 99999;
   display: flex;
   gap: 3rem;
   justify-content: space-between;
@@ -135,4 +138,11 @@ header nav a {
 .badge {
   white-space: nowrap;
   height: 20px;
+}
+
+/* containers */
+.rocketlist-container,
+.missiontable,
+.profile {
+  padding-top: 150px;
 }

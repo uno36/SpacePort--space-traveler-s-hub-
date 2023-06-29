@@ -5,36 +5,49 @@ import { Container, Row, Col } from 'react-bootstrap';
 const Profile = () => {
   const rockets = useSelector((state) => state.rockets.rockets);
   const missions = useSelector((state) => state.missions.missions);
+  const joinedMissions = useSelector((state) => state.missions.joinedMissions);
 
-  const reservedRocketIds = useMemo(
-    () => JSON.parse(localStorage.getItem('reservedRocketIds')) || [],
-    [],
+  const reservedRocketIds = useMemo(() => {
+    const storedIds = JSON.parse(localStorage.getItem('reservedRocketIds'));
+    return storedIds || [];
+  }, []);
+
+  const reservedRockets = useMemo(
+    () => rockets.filter((rocket) => reservedRocketIds.includes(rocket.id)),
+    [rockets, reservedRocketIds],
   );
 
-  const reservedRockets = rockets.filter((rocket) => reservedRocketIds.includes(rocket.id));
-  const reservedMissions = reservedRockets.map((rocket) => {
-    const mission = missions.find((mission) => mission.rocket_id === rocket.id);
+  const reservedMissions = useMemo(() => reservedRockets.map((rocket) => {
+    const mission = missions.find((mission) => mission && mission.rocket_id === rocket.id);
     return mission ? { ...mission, rocket_name: rocket.name } : null;
-  });
+  }), [reservedRockets, missions]);
 
   useEffect(() => {
     localStorage.setItem('reservedRocketIds', JSON.stringify(reservedRocketIds));
   }, [reservedRocketIds]);
 
+  useEffect(() => () => {
+    localStorage.setItem('reservedRocketIds', JSON.stringify(reservedRocketIds));
+  }, [reservedRocketIds]);
+
   return (
-    <Container>
+    <Container className="profile">
       <Row>
         <Col>
           <h2>My Missions</h2>
-          {reservedMissions.length > 0 ? (
-            <ul>
-              {reservedMissions.map((mission) => (
-                <li key={mission && mission.id}>
-                  {mission && mission.mission_name}
-                  -
-                  {mission && mission.rocket_name}
-                </li>
-              ))}
+          {joinedMissions.length > 0 || reservedMissions.length > 0 ? (
+            <ul className="list-group">
+              {joinedMissions.map((missionId) => {
+                const mission = missions.find((mission) => mission
+                && mission.mission_id === missionId);
+                return mission ? (
+                  <li key={mission.mission_id} className="list-group-item">
+                    {mission.mission_name}
+                    -
+                    {mission.rocket_name}
+                  </li>
+                ) : null;
+              })}
             </ul>
           ) : (
             <p>No reserved missions</p>
@@ -43,9 +56,11 @@ const Profile = () => {
         <Col>
           <h2>Rockets</h2>
           {reservedRockets.length > 0 ? (
-            <ul>
+            <ul className="list-group">
               {reservedRockets.map((rocket) => (
-                <li key={rocket.id}>{rocket.name}</li>
+                <li key={rocket.id} className="list-group-item">
+                  {rocket.name}
+                </li>
               ))}
             </ul>
           ) : (
