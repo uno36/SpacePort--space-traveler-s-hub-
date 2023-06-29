@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header component renders active navigation link 1`] = `
+<a
+  activeclassname="active"
+  aria-current="page"
+  class="link-item1 active"
+  href="/"
+>
+  Rockets
+</a>
+`;
+
+exports[`Header component renders active navigation link 2`] = `
+<a
+  activeclassname="active"
+  class="link-item2"
+  href="/missions"
+>
+  Missions
+</a>
+`;
+
+exports[`Header component renders active navigation link 3`] = `
+<a
+  activeclassname="active"
+  class="link-item3"
+  href="/profile"
+>
+  My Profile
+</a>
+`;
+
+exports[`Header component renders header title 1`] = `
+<h1>
+  Space Travelers' Hub
+</h1>
+`;
+
+exports[`Header component renders logo image 1`] = `
+<img
+  alt="logo"
+  class="logo"
+  src="logo.png"
+/>
+`;
+
+exports[`Header component renders navigation links 1`] = `
+<a
+  activeclassname="active"
+  aria-current="page"
+  class="link-item1 active"
+  href="/"
+>
+  Rockets
+</a>
+`;
+
+exports[`Header component renders navigation links 2`] = `
+<a
+  activeclassname="active"
+  class="link-item2"
+  href="/missions"
+>
+  Missions
+</a>
+`;
+
+exports[`Header component renders navigation links 3`] = `
+<a
+  activeclassname="active"
+  class="link-item3"
+  href="/profile"
+>
+  My Profile
+</a>
+`;

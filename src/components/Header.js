@@ -14,14 +14,14 @@ export default function Header() {
             <NavLink
               className="link-item1"
               to="/"
-              activeClassName="active"
+              activeclassname="active"
             >
               Rockets
             </NavLink>
             <NavLink
               className="link-item2"
               to="missions"
-              activeClassName="active"
+              activeclassname="active"
             >
               Missions
             </NavLink>
@@ -29,7 +29,7 @@ export default function Header() {
             <NavLink
               className="link-item3"
               to="profile"
-              activeClassName="active"
+              activeclassname="active"
             >
               My Profile
             </NavLink>
