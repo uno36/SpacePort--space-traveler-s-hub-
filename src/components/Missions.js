@@ -7,15 +7,12 @@ const Missions = () => {
   const dispatch = useDispatch();
   const loading = useSelector((state) => state.missions.loading);
   const error = useSelector((state) => state.missions.error);
-
   useEffect(() => {
     dispatch(fetchMissions());
   }, [dispatch]);
-
   if (loading) {
     return <div>Loading...</div>;
   }
-
   if (error) {
     return (
       <div>
@@ -24,12 +21,10 @@ const Missions = () => {
       </div>
     );
   }
-
   return (
     <div>
       <MissionsTable />
     </div>
   );
 };
-
 export default Missions;
