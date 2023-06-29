@@ -1,14 +1,24 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Container, Card } from 'react-bootstrap';
-import { selectRocket } from '../redux/reducers/rockets/rocketsActions';
+import { Container, Card, Badge } from 'react-bootstrap';
+import { selectRocket, reserveRocket } from '../redux/reducers/rockets/rocketsActions';
 
 const RocketsList = () => {
   const rockets = useSelector((state) => state.rockets.rockets);
   const dispatch = useDispatch();
+
   const handleRocketSelection = (rocket) => {
     dispatch(selectRocket(rocket));
   };
+
+  const handleReservation = (rocketId, reserved) => {
+    if (reserved) {
+      dispatch(reserveRocket(rocketId)); // Cancel reservation
+    } else {
+      dispatch(reserveRocket(rocketId)); // Reserve rocket
+    }
+  };
+
   return (
     <Container>
       <div className="rocket-cards">
@@ -21,14 +31,16 @@ const RocketsList = () => {
               <div className="card-content">
                 <h3>{rocket.name}</h3>
                 <Card.Title>{rocket.rocket_name}</Card.Title>
-                <Card.Text>{rocket.description}</Card.Text>
+                <Card.Text className="badge-desc">
+                  {rocket.reserved && <Badge className="badge btn btn-info">Reserved</Badge>}
+                  {rocket.description}
+                </Card.Text>
                 <button
                   type="submit"
-                  className="btn btn-primary card-button"
-                  onClick={() => handleRocketSelection(rocket.id)}
-                  disabled={rocket.reserved}
+                  className={`btn ${rocket.reserved ? 'btn-outline-danger' : 'btn-primary'} card-button`}
+                  onClick={() => handleReservation(rocket.id, rocket.reserved)}
                 >
-                  {rocket.reserved ? 'Reserved' : 'Reserve Rocket'}
+                  {rocket.reserved ? 'Cancel Reservation' : 'Reserve Rocket'}
                 </button>
               </div>
             </div>
@@ -38,4 +50,5 @@ const RocketsList = () => {
     </Container>
   );
 };
+
 export default RocketsList;

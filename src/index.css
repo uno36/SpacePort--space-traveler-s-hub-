@@ -77,10 +77,63 @@ header nav a {
 /* Missions Table */
 
 .status-column {
-  width: 150px; 
+  width: 120px;
+  white-space: nowrap;
+  position: relative;    
+}
+
+.status-column button {
+  font-size: 12px;
+  padding: 1px;  
+  margin: auto;
+  font-weight: 500;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%)  
 }
 
 .action-column {
-  width: 150px; 
+  width: 150px;
+  white-space: nowrap;
+  position: relative;
 }
+
+.action-column button {
+  background-color: transparent; 
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%)   
+}
+
+/* Links */
+
+.link-item1:hover,
+.link-item2:hover,
+.link-item3:hover {
+  color: red;
+}
+
+.link-item1.active,
+.link-item2.active,
+.link-item3.active {  
+  text-decoration: underline;
+  
+}
+
+.separator {
+  margin: 0 10px;
+  color: #777;
+}
+ /* badge-desc */
+ .badge-desc {
+  display: flex;
+  gap: 10px;
+ }
+
+ .badge {
+  white-space: nowrap;
+  height: 20px;
+ }
 

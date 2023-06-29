@@ -7,20 +7,38 @@ export default function Header() {
       <header className="header">
         <div className="logo-div">
           <img src={logo} alt="logo" className="logo" />
-          <h1>Space Travelers Hub</h1>
+          <h1>Space Travelers' Hub</h1>
         </div>
         <div>
           <nav>
-            <NavLink className="link-item1" to="/">Rockets</NavLink>
-            <NavLink className="link-item2" to="missions">Missions</NavLink>
-            <NavLink className="link-item3" to="profile">Profile</NavLink>
+            <NavLink
+              className="link-item1"
+              to="/"
+              activeClassName="active"
+            >
+              Rockets
+            </NavLink>
+            <NavLink
+              className="link-item2"
+              to="missions"
+              activeClassName="active"
+            >
+              Missions
+            </NavLink>
+            <span className="separator">|</span>
+            <NavLink
+              className="link-item3"
+              to="profile"
+              activeClassName="active"
+            >
+              My Profile
+            </NavLink>
           </nav>
         </div>
       </header>
       <main>
         <Outlet />
       </main>
-
     </div>
   );
 }

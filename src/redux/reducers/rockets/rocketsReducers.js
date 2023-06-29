@@ -3,8 +3,13 @@ import {
   FETCH_ROCKETS_SUCCESS,
   FETCH_ROCKETS_FAILURE,
   SELECT_ROCKET,
+  RESERVE_ROCKET,
 } from './rocketsActions';
-import { default as RESERVE_ROCKET } from './rocketsTypes';
+
+const isRocketReserved = (rocketId) => {
+  const reservedRocketIds = JSON.parse(localStorage.getItem('reservedRocketIds')) || [];
+  return reservedRocketIds.includes(rocketId);
+};
 
 const initialState = {
   rockets: [],
@@ -12,6 +17,7 @@ const initialState = {
   loading: false,
   error: null,
 };
+
 const rocketsReducer = (state = initialState, action) => {
   switch (action.type) {
     case FETCH_ROCKETS_REQUEST:
@@ -20,16 +26,14 @@ const rocketsReducer = (state = initialState, action) => {
         loading: true,
         error: null,
       };
-    case RESERVE_ROCKET:
-      return {
-        ...state,
-        rockets: state.rockets.map((rocket) => (rocket.id === action.payload ? { ...rocket, reserved: true } : rocket)),
-      };
     case FETCH_ROCKETS_SUCCESS:
       return {
         ...state,
         loading: false,
-        rockets: action.payload,
+        rockets: action.payload.map((rocket) => ({
+          ...rocket,
+          reserved: isRocketReserved(rocket.id),
+        })),
       };
     case FETCH_ROCKETS_FAILURE:
       return {
@@ -37,14 +41,22 @@ const rocketsReducer = (state = initialState, action) => {
         loading: false,
         error: action.payload,
       };
-    case 'SELECT_ROCKET':
+    case SELECT_ROCKET:
       const { rocketId } = action.payload;
       return {
         ...state,
-        rockets: state.rockets.map((rocket) => (rocket.id === rocketId ? { ...rocket, reserved: true } : rocket)),
+        rockets: state.rockets.map((rocket) => (rocket.id === rocketId
+          ? { ...rocket, reserved: true } : rocket)),
+      };
+    case RESERVE_ROCKET:
+      return {
+        ...state,
+        rockets: state.rockets.map((rocket) => (rocket.id === action.payload
+          ? { ...rocket, reserved: !rocket.reserved } : rocket)),
       };
     default:
       return state;
   }
 };
+
 export default rocketsReducer;

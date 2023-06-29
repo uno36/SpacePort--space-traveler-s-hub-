@@ -21,10 +21,10 @@ const MissionsTable = () => {
               <td>{mission.mission_name}</td>
               <td>{mission.description}</td>
               <td className="status-column">
-                <Button variant="primary">Not a member</Button>
+                <Button variant="secondary rounded-1">NOT A MEMBER</Button>
               </td>
               <td className="action-column">
-                <Button variant="success">Join mission</Button>
+                <Button className="btn btn-outline-dark rounded-0">Join Mission</Button>
               </td>
             </tr>
           ))}
