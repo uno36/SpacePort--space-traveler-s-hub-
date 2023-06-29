@@ -1,0 +1,3 @@
+const RESERVE_ROCKET = 'RESERVE_ROCKET';
+
+export default RESERVE_ROCKET;
