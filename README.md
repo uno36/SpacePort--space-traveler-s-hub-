@@ -160,7 +160,7 @@ Feel free to check the [issues page](../../issues/).
 <!-- SUPPORT -->
 ## ⭐️ Show your support <a name="support"></a>
 
-If you like this project, give us a ⭐️ star!
+If you like this project, give us a ⭐️ star!.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
