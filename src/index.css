@@ -43,7 +43,7 @@ header nav a {
   width: 100px;
 }
 
-/*Rocket cards css*/
+/* Rocket cards css */
 .rocket-cards {
   display: flex;
   flex-wrap: wrap;
@@ -79,18 +79,18 @@ header nav a {
 .status-column {
   width: 120px;
   white-space: nowrap;
-  position: relative;    
+  position: relative;
 }
 
 .status-column button {
   font-size: 12px;
-  padding: 1px;  
+  padding: 1px;
   margin: auto;
   font-weight: 500;
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%)  
+  transform: translate(-50%, -50%);
 }
 
 .action-column {
@@ -100,11 +100,11 @@ header nav a {
 }
 
 .action-column button {
-  background-color: transparent; 
+  background-color: transparent;
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%)   
+  transform: translate(-50%, -50%);
 }
 
 /* Links */
@@ -117,23 +117,22 @@ header nav a {
 
 .link-item1.active,
 .link-item2.active,
-.link-item3.active {  
+.link-item3.active {
   text-decoration: underline;
-  
 }
 
 .separator {
   margin: 0 10px;
   color: #777;
 }
- /* badge-desc */
- .badge-desc {
+
+/* badge-desc */
+.badge-desc {
   display: flex;
   gap: 10px;
- }
+}
 
- .badge {
+.badge {
   white-space: nowrap;
   height: 20px;
- }
-
+}
