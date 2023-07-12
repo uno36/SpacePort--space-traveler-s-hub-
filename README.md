@@ -127,19 +127,18 @@ $ npm run test
 
 <!-- AUTHORS -->
 ## 👥 Author <a name="author"></a>
-- Emmanuel Tofa
 - Enobong Isong
+- Emmanuel Tofa
  
 👤 **Author1**
-- GitHub: [@githubhandle](https://github.com/uno36)
-- Twitter: [@twitterhandle](@tofauemmanuel)
-- LinkedIn: [LinkedIn](in/emmanuel-tofa-673b2516a)
-
-👤 **Author2**
 - GitHub: [@githubhandle](https://github.com/Enoisong)
 - Twitter: [@twitterhandle](https://twitter.com/Enobongmisong)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/enobong-isong/)
 
+👤 **Author2**
+- GitHub: [@githubhandle](https://github.com/uno36)
+- Twitter: [@twitterhandle](@tofauemmanuel)
+- LinkedIn: [LinkedIn](in/emmanuel-tofa-673b2516a)
 
 ## 🔭 Future Features <a name="future-features"></a>
 
