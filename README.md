@@ -117,8 +117,6 @@ Install this project with:
 $ npm run test
 ```
 
-### Deployment
-
 <a name="Deployment"></a>
  After merge
 
